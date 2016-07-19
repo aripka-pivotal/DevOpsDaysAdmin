@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Pivotal DevOpsDays Minneapolis</title>
+<link rel="stylesheet" href="css/foundation.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<nav class="top-bar">
+		<ul class="title-area">
+			<li class="name">
+				<h1>
+					<a href="./">Pivotal DevOpsDays Minneapolis</a>
+				</h1>
+			</li>
+		</ul>
+	</nav>
+
+	<div class="row">
+		<div class="large-12 columns">
+			<h3>Drawing Registration Info</h3>
+			<hr />
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="input">
+			<form action="register" method="post">
+				Name: <input type="text" id="name" name="name"/>
+				Company:<input type="text" id="company" name="company"/> 
+				Email Address:<input type="text" id="emailAddress" name="emailAddress"/> 
+				<input type="submit" class="medium button" value="Register"/> 
+				<a href="register" class="medium button">Cancel</a>
+			</form>
+		</div>
+	</div>
+
+</body>
+
+
+</html>
