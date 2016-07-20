@@ -1,5 +1,6 @@
 applications:
 - name: devops-mpls
+  path: target/devopsadmin-0.0.1-SNAPSHOT.jar
   instances: 1
   memory: 512M
   disk_quota: 1024M
