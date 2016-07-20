@@ -1,0 +1,10 @@
+applications:
+- name: devops-mpls
+  instances: 1
+  memory: 512M
+  disk_quota: 1024M
+  host: devops-mpls
+  domain: cfapps.io
+  services:
+  - devopsdb
+  stack: cflinuxfs2
