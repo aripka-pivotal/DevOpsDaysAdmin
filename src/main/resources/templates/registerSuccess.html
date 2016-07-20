@@ -1,34 +1,42 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title> Registration Success</title>
-    <link rel="stylesheet" href="css/foundation.css" />
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Registration Success</title>
+<link rel="stylesheet" href="css/foundation.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script type="text/javascript">
+	function Redirect() {
+		window.location = "register";
+	}
+	setTimeout('Redirect()', 5000);
+</script>
+
+
 </head>
-  <body>
+<body>
 
-    <nav class="top-bar">
-      <ul class="title-area">
-        <li class="name">
-        	<a href="./">Pivotal DevOpsDays Minneapolis</a>
-        </li>
-      </ul>
-      <section class="top-bar-section">
-        <ul class="right">
-          <li><a href="./">Home</a></li>
-          <li><a href="register">Register</a></li>
-          <li><a href="learnMore">Learn More</a></li>
-        </ul>
-      </section>
-    </nav>
+	<nav class="top-bar">
+		<ul class="title-area">
+			<li class="name"><a href="./">Pivotal DevOpsDays Minneapolis</a>
+			</li>
+		</ul>
+		<section class="top-bar-section">
+			<ul class="right">
+				<li><a href="./">Home</a></li>
+				<li><a href="register">Register</a></li>
+				<li><a href="learnMore">Learn More</a></li>
+			</ul>
+		</section>
+	</nav>
 
-    <div class="row">
-      <div class="large-12 columns">
-        <h3 style="color:#01786E">Registration Successful</h3>
-        <hr/>
-      </div>
-    </div>
+	<div class="row">
+		<div class="large-12 columns">
+			<h3 style="color: #01786E">Registration Successful</h3>
+			<hr />
+		</div>
+	</div>
 
-    </body>
-    
+</body>
+
 </html>
