@@ -1,9 +1,12 @@
 package io.pivotal.devopsdays.entity;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 @Entity
 public class LeadCapture {
@@ -11,43 +14,39 @@ public class LeadCapture {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
-	private String name;
+	@OneToOne(cascade=CascadeType.PERSIST)
+	private DrawingRegistrant drawingRegistrant;
+	
 	private String title;
-	private String company;
-	private String address;
 	private String phoneNumber;
-	private String emailAddress;
+	@Column(length=512)
 	private String currentChallenge;
+	
+	@Column(length=512)
 	private String nextSteps;
+	
+	
 	public Long getId() {
 		return id;
 	}
+	
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+	
+	public DrawingRegistrant getDrawingRegistrant() {
+		return drawingRegistrant;
 	}
-	public void setName(String name) {
-		this.name = name;
+
+	public void setDrawingRegistrant(DrawingRegistrant drawingRegistrant) {
+		this.drawingRegistrant = drawingRegistrant;
 	}
+
 	public String getTitle() {
 		return title;
 	}
 	public void setTitle(String title) {
 		this.title = title;
-	}
-	public String getCompany() {
-		return company;
-	}
-	public void setCompany(String company) {
-		this.company = company;
-	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
 	}
 	public String getPhoneNumber() {
 		return phoneNumber;
@@ -55,18 +54,14 @@ public class LeadCapture {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-	public String getEmailAddress() {
-		return emailAddress;
-	}
-	public void setEmailAddress(String emailAddress) {
-		this.emailAddress = emailAddress;
-	}
+	
 	public String getCurrentChallenge() {
 		return currentChallenge;
 	}
 	public void setCurrentChallenge(String currentChallenge) {
 		this.currentChallenge = currentChallenge;
 	}
+	
 	public String getNextSteps() {
 		return nextSteps;
 	}
