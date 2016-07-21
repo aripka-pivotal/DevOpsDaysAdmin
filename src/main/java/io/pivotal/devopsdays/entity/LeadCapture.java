@@ -19,10 +19,10 @@ public class LeadCapture {
 	
 	private String title;
 	private String phoneNumber;
-	@Column(length=512)
+	@Column(columnDefinition="TEXT")
 	private String currentChallenge;
 	
-	@Column(length=512)
+	@Column(columnDefinition="TEXT")
 	private String nextSteps;
 	
 	
