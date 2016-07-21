@@ -2,6 +2,7 @@ package io.pivotal.devopsdays.web;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -10,6 +11,7 @@ import io.pivotal.devopsdays.entity.DrawingRegistrant;
 import io.pivotal.devopsdays.entity.LeadCapture;
 import io.pivotal.devopsdays.repository.DrawingRegistrantRepository;
 import io.pivotal.devopsdays.repository.LeadCaptureRepository;
+import scala.remote;
 
 @Controller
 public class DrawingRegisterController {
@@ -63,6 +65,23 @@ public class DrawingRegisterController {
 		leadCaptureRepo.save(leadCapture);
 
 		return "registerSuccess";
+	}
+
+	@RequestMapping(value="/pickwinner", method=RequestMethod.GET)
+	public  String pickWinner(){
+		return "pickWinner";
+	}
+	
+	
+	@RequestMapping(value="/pickwinner", method=RequestMethod.POST)
+	public String pickWinner(@RequestParam String ticketNum, Model model){
+		
+		for(DrawingRegistrant dr : drawingRegistrantRepo.findByTicketNumber(ticketNum)){
+				model.addAttribute("winner", dr);
+		}
+		
+		return "theWinner";
+		
 	}
 	
 	private DrawingRegistrant createDrawingRegistrant(String name, String emailAddress, String company) {
