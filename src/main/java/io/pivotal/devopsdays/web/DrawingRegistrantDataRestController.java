@@ -1,7 +1,5 @@
 package io.pivotal.devopsdays.web;
 
-import javax.management.RuntimeErrorException;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -53,6 +51,17 @@ public class DrawingRegistrantDataRestController {
 		return dr;
 		
 		
+	}
+	
+	@RequestMapping("/winner")
+	public DrawingRegistrant getWinner(){
+//		for(DrawingRegistrant dr: repo.getWinner()){
+//			return dr;
+//		}
+		
+		return repo.getWinner();
+		
+		//return null;
 	}
 	
 }
