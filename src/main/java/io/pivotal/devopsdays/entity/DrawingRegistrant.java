@@ -1,6 +1,5 @@
 package io.pivotal.devopsdays.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,7 +16,6 @@ public class DrawingRegistrant {
 	private String company;
 	private String emailAddress;
 	
-	@Column(unique=true)
 	private String ticketNumber;
 	
 	
